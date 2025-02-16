@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Admin: Submissions</title>
+</head>
+<body>
+<h1>All Image Feedback</h1>
+<p><a href="/">Go to Random Image</a></p>
+<hr />
+
+<% Object.keys(submissions).forEach(function(imageName) { %>
+    <h2><%= imageName %></h2>
+    <% let feedbackList = submissions[imageName]; %>
+    <ul>
+        <% feedbackList.forEach(function(entry) { %>
+            <li>
+                <strong><%= entry.timestamp %>:</strong> <%= entry.feedback %>
+            </li>
+        <% }) %>
+    </ul>
+    <hr />
+<% }) %>
+</body>
+</html>

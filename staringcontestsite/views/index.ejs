@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="style.css" ref="stylesheet">
+    <meta charset="utf-8" />
+    <title>Random Image</title>
+</head>
+
+<style>
+    title{
+        display: inline-block;
+        justify-content: left;
+        align-items: start;
+    }
+
+    p{font-size: 20px;
+    padding: 0px;
+    margin: 0px;}
+
+    div1{
+        display: flex;
+
+    }
+
+</style>
+<body>
+<div style=" display:flex; flex-direction: column; align-items:center;">
+<title>PLEASE JUDGE MY ART</title>
+</div>
+<div1 style=" display:flex; flex-direction: column; align-items:center;">
+    <img
+            src="/images/<%= image %>"
+            alt="Random Image"
+            style="max-width: 300px; height: auto;"
+    />
+</div1>
+
+<form action="/submit" method="POST">
+    <input type="hidden" name="imageName" value="<%= image %>" />
+    <div style=" display:flex; flex-direction: column; align-items:center;">
+        <p for="feedback">Every image has a secret.
+            <p>
+        <p for="feedback">
+            What is this image telling you?<p>
+
+            <br/>
+        <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea>
+    </div>
+<div style=" display:flex; flex-direction: column; align-items:center;">
+    <button type="submit">Submit</button>
+</div>
+</form>
+</body>
+</html>
